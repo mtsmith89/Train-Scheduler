@@ -11,6 +11,8 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+
+
 $("#addTrainBtn").on("click", function() {
   var trainName = $("#trainNameInput")
     .val()
@@ -39,7 +41,9 @@ $("#addTrainBtn").on("click", function() {
 
   database.ref().push(newTrain);
 
-  alert("Train successfully added");
+//   alert("Train successfully added");
+
+  vex.dialog.alert('Train Successfully Added!')
 
   $("#trainNameInput").val("");
   $("#destinationInput").val("");
