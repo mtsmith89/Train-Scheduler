@@ -1,0 +1,20 @@
+body {
+    background-image: url(../images/background.png);
+}
+
+.card {
+    border: none;
+}
+
+.jumbotron {
+    padding: 10px;
+}
+
+.form-group {
+    padding: 10px;
+}
+
+.btn {
+    margin: 10px;
+    margin-bottom: 15px;
+}
