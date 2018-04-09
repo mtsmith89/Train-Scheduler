@@ -13,36 +13,35 @@ var database = firebase.database();
 
 
 
-$("#addTrainBtn").on("click", function() {
-  var trainName = $("#trainNameInput")
+$("#addTrain").on("click", function() {
+  var trainName = $("#trainName")
     .val()
     .trim();
-  var destination = $("#destinationInput")
+  var destination = $("#destination")
     .val()
     .trim();
-  var firstTrainUnix = moment(
-    $("#firstTrainInput")
+  var firstTrain = moment(
+    $("#firstTrain")
       .val()
       .trim(),
     "HH:mm"
   )
     .subtract(10, "years")
     .format("X");
-  var frequency = $("#frequencyInput")
+  var frequency = $("#frequency")
     .val()
     .trim();
 
   var newTrain = {
     name: trainName,
     destination: destination,
-    firstTrain: firstTrainUnix,
+    firstTrain: firstTrain,
     frequency: frequency
   };
 
   database.ref().push(newTrain);
 
 //   alert("Train successfully added");
-
   vex.dialog.alert('Train Successfully Added!')
 
   $("#trainNameInput").val("");
